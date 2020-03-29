@@ -1,0 +1,115 @@
+/* The switch - the box around the slider */
+.switch {
+ position: relative;
+ display: inline-block;
+ width: 48px;
+ height: 27.2px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+ opacity: 0;
+ width: 0;
+ height: 0;
+}
+
+/* The slider */
+.slider {
+ position: absolute;
+ cursor: pointer;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: #ccc;
+ -webkit-transition: .4s;
+ transition: .4s;
+}
+
+.slider:before {
+ position: absolute;
+ content: "";
+ height: 20.8px;
+ width: 20.8px;
+ left: 3.2px;
+ bottom: 3.2px;
+ background-color: white;
+ -webkit-transition: .4s;
+ transition: .4s;
+}
+
+input:checked + .slider {
+ background-color: #2196F3;
+}
+
+input:focus + .slider {
+ box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+ -webkit-transform: translateX(20.8px);
+ -ms-transform: translateX(20.8px);
+ transform: translateX(20.8px);
+}
+
+/* Rounded sliders */
+.slider.round {
+ border-radius: 27.2px;
+}
+
+.slider.round:before {
+ border-radius: 50%;
+}
+
+/* Popup container */
+.popup {
+ position: relative;
+ display: inline-block;
+ cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+ visibility: hidden;
+ width: 160px;
+ background-color: #555;
+ color: #fff;
+ text-align: center;
+ border-radius: 6px;
+ padding: 8px 0;
+ position: absolute;
+ z-index: 1;
+ bottom: 125%;
+ left: 50%;
+ margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+ content: "";
+ position: absolute;
+ top: 100%;
+ left: 50%;
+ margin-left: -5px;
+ border-width: 5px;
+ border-style: solid;
+ border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+ visibility: visible;
+ -webkit-animation: fadeIn 1s;
+ animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+ from {opacity: 0;}
+ to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+ from {opacity: 0;}
+ to {opacity:1 ;}
+}

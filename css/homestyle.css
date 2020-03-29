@@ -1,0 +1,85 @@
+.main-page h1 {
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+
+.main-page h2 {
+	margin-bottom: 20px;
+}
+
+.main-page .btn {
+	margin-top: 40px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+}
+
+@media (min-width: 268px) {
+  .showcase .showcase-text {
+    padding: 7rem;
+  }
+}
+
+/** Icons Grid **/
+
+.features-icons {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  margin-bottom: 50px;
+  margin-top: 40px;
+}
+
+.features-icons .features-icons-item {
+  max-width: 20rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon {
+  height: 7rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon i {
+  font-size: 4.5rem;
+}
+
+.features-icons .features-icons-item:hover .features-icons-icon i {
+  font-size: 5rem;
+}
+
+/** Image Showcases **/
+
+.testimonials {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.testimonials .testimonial-item {
+  max-width: 18rem;
+}
+
+.testimonials .testimonial-item img {
+  -webkit-box-shadow: 0px 5px 5px 0px #adb5bd;
+  box-shadow: 0px 5px 5px 0px #adb5bd;
+}
+
+#toolJumbotron {
+  padding: 25px 0 25px 0;
+}
+
+#aboutJumbo {
+  padding: 25px 25px 25px 25px;
+}
+
+div.scrollSide {
+  height: 500px;
+  overflow-y: scroll;
+	overflow-x: hidden;
+	text-align: center;
+}
+
+.container{
+	padding: 0 0 0 5px;
+}
+
+.container-fluid{
+	padding-left: 0;
+	padding-right: 0;
+}

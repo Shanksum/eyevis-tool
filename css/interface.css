@@ -1,0 +1,20 @@
+/* support css for the interface */
+.navbar img {
+    margin: 0 10px;
+    height: 30px;
+    width: auto;
+}
+
+#loadingAnimation {
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background:rgba(0, 0, 0, 0.5);
+}
+
+#loadingAnimationSpinner {
+    background:rgba(255, 255, 255, 0.4);
+}
