@@ -29,7 +29,7 @@ You can find & test the tool here: https://eyevis.west.uni-koblenz.de/
   * The `Import data` pane offers the possibility to try the tool with our collected test data or upload specific `.csv` files of eye tracking studies and their corresponding image files. We offer a Python Script to transform EYEVIDO SQL dumps into our required format.
   * The `Tool` pane is the visualization part and lets the user chose which website of the uploaded data should be displayed and which visulization method should be applied. Each method comes with customization settings. We also offer general filter options to filter the displayed user data by metadata such as gender, age etc.
   * The `Help` pane explains all available visualization methods and the conducted eye tracking study.
-- Most of the computing happens in the `visulization.js` and `filtering.js`:
+- Most of the computing happens in the `visualization.js` and `filtering.js`:
    * Upon selecting a website/screenshot which should be displayed, the `visualization.js` script takes care of loading the screenshot, the gaze and mouse data and the table of displayed users, aswell as assigning each user a unique color.
    * `filtering.js` takes care of not only managing the filter options, but also displaying the right visualization options and calling the selected visualization method. The corresponding JavaScript file of the selected method will then take over to calculate and display the visualization on the canvas.
 ***
