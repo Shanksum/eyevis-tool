@@ -136,9 +136,9 @@ function proceedData(file) {
     reader.readAsText(file);
     reader.onload = function (event) {
         var csv = event.target.result;
-        var data = $.csv.toArrays(csv);
+        var data = $.csv.toArrays(csv);        
         //saving as a global variable
-        parsed_data = parseDataStructure(data);
+        parsed_data = parseDataStructure(data);        
         window.importedFiles[file.name] = parsed_data;
         //printTable(file, data);
         if (file.name.startsWith("gaze")) {
@@ -153,6 +153,12 @@ function proceedData(file) {
     };
 }
 
+var gazeFillBool = false;
+var mouseFillBool = false;
+var userFillBool = false;
+var metaFillBool = false;
+
+
 // function to fill window.dataStructure with values
 // gaze.csv, mouse.csv, executed_studies.csv, metadata.csv needed to work properly
 function makeDataStructure() {
@@ -166,7 +172,7 @@ function makeDataStructure() {
     for (let key in window.importedFiles) {
         for (let lkey in window.importedFiles[key]) {
             let elem = window.importedFiles[key][lkey];
-            if (key.startsWith("gaze.csv")) {
+            if (key.startsWith("gaze.csv") && !gazeFillBool) {                
                 let temp = window.dataStructure.gaze;
                 let line = {
                     timestamp: elem["timestamp"],
@@ -175,7 +181,7 @@ function makeDataStructure() {
                     duration: elem["duration"],
                 };
                 recInitObj(temp, [elem["study_id"],elem["web_id"],elem["web_group_id"],elem["user_id"]], true);
-                temp[elem["study_id"]][elem["web_id"]][elem["web_group_id"]][elem["user_id"]].push(line);
+                temp[elem["study_id"]][elem["web_id"]][elem["web_group_id"]][elem["user_id"]].push(line);               
             }
             if (key.startsWith("mouse.csv")) {
                 let temp = window.dataStructure.mouse;
@@ -223,7 +229,15 @@ function makeDataStructure() {
                 temp[elem["study_id"]]["label"] = splitTitle[0];
             }
         }
-    }
+        if(key.startsWith("gaze.csv"))
+            gazeFillBool = true;
+        if(key.startsWith("mouse.csv"))
+            mouseFillBool = true;
+        if(key.startsWith("executed_studies.csv"))
+            userFillBool = true;
+        if(key.startsWith("metadata.csv"))
+            metaFillBool = true;
+    } 
     window.dataStructure.all_colors = assignColors(window.dataStructure.all_users);
 }
 
@@ -259,7 +273,7 @@ function fillSelect(level) {
         for (let elem in selectIterator) {
             selectBox.append("<option value='" + elem + "'>" + selectLabel[elem].label + "</option>");
         }
-    }
+    }    
 }
 
 

@@ -33,7 +33,7 @@ var menu1 = new Vue({
       startLoadingAnimation()
       let csvs = ['executed_studies', 'gaze', 'metadata', 'mouse']
       _.forEach(csvs, f => {
-        Papa.parse(`http://eyevis.west.uni-koblenz.de/csv/${f}.csv`, {
+        Papa.parse(`https://eyevis.west.uni-koblenz.de/csv/${f}.csv`, {
           download: true,
           header: true,
           skipEmptyLines: true,
